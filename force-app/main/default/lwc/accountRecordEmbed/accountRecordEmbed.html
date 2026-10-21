@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title={cardTitle}>
+        <div class="slds-p-around_medium">
+            <template if:true={iframeUrl}>
+                <iframe src={iframeUrl} style={iframeStyle} title={cardTitle}></iframe>
+            </template>
+            <template if:true={error}>
+                <p class="slds-text-color_error">{error}</p>
+            </template>
+            <template if:false={iframeUrl}>
+                <template if:false={error}>
+                    <p>Loading Sigma workbook...</p>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

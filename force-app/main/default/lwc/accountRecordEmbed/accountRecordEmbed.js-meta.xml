@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Sigma Account Record Embed</masterLabel>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <objects>
+                <object>Account</object>
+            </objects>
+            <property name="orgSlug" type="String" label="Sigma org slug" required="true" description="The org slug in your Sigma URL: app.sigmacomputing.com/{org slug}/workbook/..."/>
+            <property name="workbookId" type="String" label="Sigma workbook ID" required="true" description="The workbook's URL ID (the last path segment of its Sigma URL, including any name prefix)"/>
+            <property name="cardTitle" type="String" label="Card title" default="Sigma Workbook"/>
+            <property name="height" type="Integer" label="Height (px)" default="600"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>
